@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingVertical="56dp">
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remote FileBox"
+        android:textStyle="bold"
+        android:textSize="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="24dp"/>
+
+    <ImageView
+        android:id="@+id/allFilesMenu"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/menu"/>
+
+
+    <LinearLayout
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/appName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/selectMsgImg"
+            android:layout_width="wrap_content"
+            android:layout_height="280dp"
+            android:src="@drawable/photo"
+            android:paddingVertical="32dp"/>
+
+        <TextView
+            android:id="@+id/selectMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select 6 Images."
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/selectedImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="320dp"
+        app:layout_constraintTop_toBottomOf="@+id/msg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="24dp"
+        android:layout_marginTop="32dp"
+        android:useDefaultMargins="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/selectedImage1"
+            android:layout_width="0dp"
+            android:layout_height="152dp"
+            android:src="@drawable/waterbottle"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/selectedImage2"
+            android:layout_width="0dp"
+            android:layout_height="152dp"
+            android:src="@drawable/waterbottle"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/selectedImage3"
+            android:layout_width="0dp"
+            android:layout_height="152dp"
+            android:src="@drawable/waterbottle"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/selectedImage4"
+            android:layout_width="0dp"
+            android:layout_height="152dp"
+            android:src="@drawable/waterbottle"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/selectedImage5"
+            android:layout_width="0dp"
+            android:layout_height="152dp"
+            android:src="@drawable/waterbottle"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/selectedImage6"
+            android:layout_width="0dp"
+            android:layout_height="152dp"
+            android:src="@drawable/waterbottle"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:scaleType="centerCrop"/>
+
+    </GridLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/selectedImages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="24dp"
+        android:progress="0"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"/>
+
+    <LinearLayout
+        android:id="@+id/btnDiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/selectedImages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="32dp">
+
+        <Button
+            android:id="@+id/selectImages"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:text="Select Images"
+            android:textSize="15sp"
+            android:paddingVertical="12dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/uploadImages"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:text="Upload Images"
+            android:textSize="15sp"
+            android:paddingVertical="12dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:clickable="false"
+            android:backgroundTint="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/responseDiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/btnDiv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="24dp"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/response"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Response : "
+            android:textSize="17sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Uploaded Image URLs :"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/urls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
